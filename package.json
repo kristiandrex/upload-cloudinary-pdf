@@ -1,0 +1,30 @@
+{
+  "name": "upload-cloudinary-pdf",
+  "version": "1.0.0",
+  "description": "Upload PDF files to Cloudinary",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon --inspect src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristiandrex/upload-cloudinary-pdf.git"
+  },
+  "keywords": [],
+  "author": "Cristian Torrez <cristiandrestorres@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kristiandrex/upload-cloudinary-pdf/issues"
+  },
+  "homepage": "https://github.com/kristiandrex/upload-cloudinary-pdf#readme",
+  "dependencies": {
+    "cloudinary": "^1.27.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
