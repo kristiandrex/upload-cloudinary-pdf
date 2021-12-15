@@ -27,8 +27,9 @@ app.post('/', upload.single('pdf'), async (req, res) => {
     }
 
     const upload = await cloudinary.uploader.upload(fileToDataURI(file));
+    const url = changeExtToPng(upload.secure_url);
 
-    return res.send(changeExtToPng(upload.secure_url));
+    return res.send({ url });
   } catch (error) {
     console.error(error);
     res.status(500).send(error);
