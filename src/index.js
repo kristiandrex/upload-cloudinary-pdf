@@ -3,10 +3,12 @@ config();
 
 const express = require('express');
 const multer = require('multer');
+const cors = require('cors');
 const cloudinary = require('./cloudinary');
 const { fileToDataURI, changeExtToPng } = require('./utils');
 
 const app = express();
+app.use(cors());
 
 const upload = multer({
   storage: multer.memoryStorage()
