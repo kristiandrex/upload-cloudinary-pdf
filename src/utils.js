@@ -1,11 +1,12 @@
 /**
  * Transforms a file into a data URI.
- * @param {Express.Multer.File} file
- * @returns {string} Data URI
+ * @param {Buffer} buffer The file buffer.
+ * @param {string} mimeType The file mime type.
+ * @returns {string} Data URL
  */
 
-function fileToDataURI(file) {
-  return `data:${file.mimetype};base64,${file.buffer.toString('base64')}`;
+export function bufferToDataURL(buffer, mimeType) {
+  return `data:${mimeType};base64,${buffer.toString('base64')}`;
 }
 
 /**
@@ -13,11 +14,11 @@ function fileToDataURI(file) {
  * @param {string} filename
  * @returns {string}
  */
-function changeExtToPng(filename) {
-  return filename.slice(0, -3).concat('png');
+export function replaceFileExtension(filename) {
+  return filename.replace('.pdf', '.png');
 }
 
-module.exports = {
-  fileToDataURI,
-  changeExtToPng
+export default {
+  bufferToDataURL,
+  replaceFileExtension
 };
